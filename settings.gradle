@@ -6,3 +6,5 @@ pluginManagement {
 }
 
 rootProject.name = 'equino-security'
+
+include 'equino-security-spring-basic'
