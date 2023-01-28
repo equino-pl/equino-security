@@ -4,8 +4,14 @@ plugins {
 
 subprojects {
     apply plugin: 'maven-publish'
+    apply plugin: 'java-library'
 
     publishing {
+        publications {
+            equinoSecurityLibrary(MavenPublication) {
+                from components.java
+            }
+        }
         repositories {
             maven {
                 name = "EquinoNexus"

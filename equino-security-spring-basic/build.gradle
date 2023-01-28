@@ -1,7 +1,3 @@
-plugins {
-    id 'java-library'
-}
-
 sourceCompatibility = 17
 targetCompatibility = 17
 
