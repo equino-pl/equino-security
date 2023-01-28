@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://nexus.cloud.equino.ovh/repository/m2' }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'equino-security'
+
+include 'equino-security-spring-basic'
