@@ -35,7 +35,8 @@ public class BasicAuthSecurity {
         try {
 
             http
-                    .authorizeRequests().anyRequest().authenticated()
+                    .authorizeHttpRequests()
+                    .anyRequest().authenticated()
                     .and()
                     .httpBasic()
                     .and()
