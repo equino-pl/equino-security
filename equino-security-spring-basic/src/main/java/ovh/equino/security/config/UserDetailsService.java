@@ -7,11 +7,12 @@ import ovh.equino.security.identity.IdentityRepository;
 
 import java.util.Optional;
 
-class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
     private final IdentityRepository identityRepository;
 
-    UserDetailsService(IdentityRepository identityRepository) {
+    // TODO [mc] Make class and constructor package-protected
+    public UserDetailsService(IdentityRepository identityRepository) {
         this.identityRepository = identityRepository;
     }
 
