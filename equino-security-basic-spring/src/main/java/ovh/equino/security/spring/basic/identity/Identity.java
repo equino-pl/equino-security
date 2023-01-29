@@ -4,30 +4,51 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public interface Identity extends UserDetails, ovh.equino.security.identity.Identity {
+import static java.util.Collections.emptyList;
+
+public record Identity(
+        String id,
+        String username,
+        String password
+) implements UserDetails, ovh.equino.security.identity.Identity {
 
     @Override
-    String getId();
+    public String getId() {
+        return id();
+    }
 
     @Override
-    String getUsername();
+    public String getUsername() {
+        return username();
+    }
 
     @Override
-    String getPassword();
-
-
-    @Override
-    Collection<GrantedAuthority> getAuthorities();
+    public String getPassword() {
+        return password();
+    }
 
     @Override
-    boolean isAccountNonExpired();
+    public Collection<GrantedAuthority> getAuthorities() {
+        return emptyList();
+    }
 
     @Override
-    boolean isAccountNonLocked();
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
-    boolean isCredentialsNonExpired();
+    public boolean isAccountNonLocked() {
+        return true;
+    }
 
     @Override
-    boolean isEnabled();
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
