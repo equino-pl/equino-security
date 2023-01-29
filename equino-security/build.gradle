@@ -1,0 +1,7 @@
+publishing {
+    publications {
+        equinoSecurityLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+}

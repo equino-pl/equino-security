@@ -4,8 +4,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public interface Identity extends UserDetails {
+public interface Identity extends UserDetails, ovh.equino.security.identity.Identity {
 
+    @Override
     String getId();
 
     @Override

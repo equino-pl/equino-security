@@ -6,12 +6,10 @@ subprojects {
     apply plugin: 'maven-publish'
     apply plugin: 'java-library'
 
+    sourceCompatibility = 17
+    targetCompatibility = 17
+
     publishing {
-        publications {
-            equinoSecurityLibrary(MavenPublication) {
-                from components.java
-            }
-        }
         repositories {
             maven {
                 name = "EquinoNexus"
