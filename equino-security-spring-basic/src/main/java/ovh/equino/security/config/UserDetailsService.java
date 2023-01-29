@@ -11,7 +11,6 @@ public class UserDetailsService implements org.springframework.security.core.use
 
     private final IdentityRepository identityRepository;
 
-    // TODO [mc] Make class and constructor package-protected
     public UserDetailsService(IdentityRepository identityRepository) {
         this.identityRepository = identityRepository;
     }
