@@ -1,10 +1,13 @@
-package ovh.equino.security.identity;
+package ovh.equino.security.spring.basic.identity;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import ovh.equino.security.identity.Identity;
 
 import java.util.Collection;
 
 import static java.util.Collections.emptyList;
 
-class UnauthorizedIdentity implements Identity {
+class UnauthorizedIdentity implements Identity, UserDetails {
 
     @Override
     public String getId() {

@@ -1,17 +1,17 @@
-package ovh.equino.security.config;
+package ovh.equino.security.spring.basic.config;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import ovh.equino.security.identity.Identity;
-import ovh.equino.security.identity.IdentityRepository;
+import ovh.equino.security.spring.basic.identity.Identity;
+import ovh.equino.security.spring.basic.identity.IdentityRepository;
 
 import java.util.Optional;
 
-class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
     private final IdentityRepository identityRepository;
 
-    UserDetailsService(IdentityRepository identityRepository) {
+    public UserDetailsService(IdentityRepository identityRepository) {
         this.identityRepository = identityRepository;
     }
 
