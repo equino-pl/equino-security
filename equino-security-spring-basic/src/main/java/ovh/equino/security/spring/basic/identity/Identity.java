@@ -1,4 +1,4 @@
-package ovh.equino.security.identity;
+package ovh.equino.security.spring.basic.identity;
 
 import org.springframework.security.core.userdetails.UserDetails;
 

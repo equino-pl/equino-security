@@ -1,4 +1,4 @@
-package ovh.equino.security.crypto;
+package ovh.equino.security.spring.basic.crypto;
 
 import static java.util.Objects.isNull;
 
