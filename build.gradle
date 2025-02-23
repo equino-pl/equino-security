@@ -1,5 +1,7 @@
+import static java.util.Optional.ofNullable
+
 plugins {
-    id 'ovh.equino.version' version '0.1.1'
+    id 'ovh.equino.version' version '0.2.2'
 }
 
 subprojects {
@@ -12,11 +14,12 @@ subprojects {
     publishing {
         repositories {
             maven {
-                name = "EquinoNexus"
-                url = "https://nexus.cloud.equino.ovh/repository/m2"
+                name = "mavenEquino"
+                url = ofNullable(project.findProperty("mavenEquinoUrl"))
+                        .orElse("https://maven.cloud.equino.ovh/equinoSnapshot")
                 credentials {
-                    username = project.findProperty("equinoNexus.username")
-                    password = project.findProperty("equinoNexus.password")
+                    username = project.findProperty("mavenEquinoUsername")
+                    password = project.findProperty("mavenEquinoPassword")
                 }
             }
         }
