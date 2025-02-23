@@ -1,7 +1,7 @@
 import static java.util.Optional.ofNullable
 
 plugins {
-    id 'ovh.equino.version' version '0.2.0'
+    id 'ovh.equino.version' version '0.2.2'
 }
 
 subprojects {
@@ -14,12 +14,12 @@ subprojects {
     publishing {
         repositories {
             maven {
-                name = "equinoMaven"
-                url = ofNullable(project.findProperty("equinoMaven_url"))
-                        .orElse("https://reposilite.cloud.equino.ovh/equinoSnapshot")
+                name = "mavenEquino"
+                url = ofNullable(project.findProperty("mavenEquinoUrl"))
+                        .orElse("https://maven.cloud.equino.ovh/equinoSnapshot")
                 credentials {
-                    username = project.findProperty("equinoMaven_username")
-                    password = project.findProperty("equinoMaven_password")
+                    username = project.findProperty("mavenEquinoUsername")
+                    password = project.findProperty("mavenEquinoPassword")
                 }
             }
         }

@@ -1,14 +1,22 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         maven {
-            name 'equinoMaven'
-            url 'https://reposilite.cloud.equino.ovh/equino'
+            name 'mavenEquino'
+            url 'https://maven.cloud.equino.ovh/equino'
             credentials {
-                username settings.'equinoMaven_username'
-                password settings.'equinoMaven_password'
+                username settings.'mavenEquinoUsername'
+                password settings.'mavenEquinoPassword'
             }
         }
-        gradlePluginPortal()
+        maven {
+            name 'mavenEquinoSnapshot'
+            url 'https://maven.cloud.equino.ovh/equinoSnapshot'
+            credentials {
+                username settings.'mavenEquinoUsername'
+                password settings.'mavenEquinoPassword'
+            }
+        }
     }
 }
 

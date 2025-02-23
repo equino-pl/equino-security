@@ -11,15 +11,14 @@ pipeline {
 
     environment {
         EQUINO_MAVEN_CREDENTIALS = credentials('EquinoReposilite')
-        ORG_GRADLE_PROJECT_equinoMaven_username = "${EQUINO_MAVEN_CREDENTIALS_USR}"
-        ORG_GRADLE_PROJECT_equinoMaven_password = "${EQUINO_MAVEN_CREDENTIALS_PSW}"
+        ORG_GRADLE_PROJECT_mavenEquinoUsername = "${EQUINO_MAVEN_CREDENTIALS_USR}"
+        ORG_GRADLE_PROJECT_mavenEquinoPassword = "${EQUINO_MAVEN_CREDENTIALS_PSW}"
     }
 
     stages {
 
         stage('Check release readiness') {
             steps {
-                sh 'printenv'
                 sh 'git branch -m ${CHANGE_BRANCH}'
                 sh './gradlew --no-daemon --stacktrace verifyRelease'
             }
@@ -36,9 +35,7 @@ pipeline {
 
         stage('Publish') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'EquinoReposilite', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh './gradlew --no-daemon --stacktrace publish -x build -x jar -PequinoMaven_username=${USERNAME} -PequinoMaven_password=${PASSWORD} -PequinoMaven_url=https://reposilite.cloud.equino.ovh/equinoSnapshot'
-                }
+                sh './gradlew --no-daemon --stacktrace publish -x build -x jar -PmavenEquinoUrl=https://maven.cloud.equino.ovh/equinoSnapshot'
             }
         }
 
