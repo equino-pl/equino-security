@@ -15,11 +15,11 @@ subprojects {
         repositories {
             maven {
                 name = "equinoMaven"
-                url = ofNullable(project.findProperty("equinoMaven.url"))
+                url = ofNullable(project.findProperty("equinoMaven_url"))
                         .orElse("https://reposilite.cloud.equino.ovh/equinoSnapshot")
                 credentials {
-                    username = project.findProperty("equinoMaven.username")
-                    password = project.findProperty("equinoMaven.password")
+                    username = project.findProperty("equinoMaven_username")
+                    password = project.findProperty("equinoMaven_password")
                 }
             }
         }

@@ -37,7 +37,7 @@ pipeline {
         stage('Publish') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'EquinoReposilite', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh './gradlew --no-daemon --stacktrace publish -x build -x jar -PequinoMaven.username=${USERNAME} -PequinoMaven.password=${PASSWORD} -PequinoMaven.url=https://reposilite.cloud.equino.ovh/equinoSnapshot'
+                    sh './gradlew --no-daemon --stacktrace publish -x build -x jar -PequinoMaven_username=${USERNAME} -PequinoMaven_password=${PASSWORD} -PequinoMaven_url=https://reposilite.cloud.equino.ovh/equinoSnapshot'
                 }
             }
         }
