@@ -11,8 +11,8 @@ pipeline {
 
     environment {
         EQUINO_MAVEN_CREDENTIALS = credentials('EquinoReposilite')
-        ORG_GRADLE_PROJECT_equinoMaven.username = $EQUINO_MAVEN_CREDENTIALS_USR
-        ORG_GRADLE_PROJECT_equinoMaven.password = $EQUINO_MAVEN_CREDENTIALS_PSW
+        ORG_GRADLE_PROJECT_equinoMaven.username = ${EQUINO_MAVEN_CREDENTIALS_USR}
+        ORG_GRADLE_PROJECT_equinoMaven.password = ${EQUINO_MAVEN_CREDENTIALS_PSW}
     }
 
     stages {
