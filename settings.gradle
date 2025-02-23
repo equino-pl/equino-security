@@ -1,6 +1,13 @@
 pluginManagement {
     repositories {
-        maven { url 'https://nexus.cloud.equino.ovh/repository/m2' }
+        maven {
+            name 'equinoMaven'
+            url 'https://reposilite.cloud.equino.ovh/equino'
+            credentials {
+                username settings.'equinoMaven.username'
+                password settings.'equinoMaven.password'
+            }
+        }
         gradlePluginPortal()
     }
 }
